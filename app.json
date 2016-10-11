@@ -1,16 +1,18 @@
 {
   "name": "Odooku",
   "description": "Run Odoo on Heroku",
-  "repository": "https://github.com/adaptivdesign/odooku",
+  "repository": "https://github.com/singularity-is-i/odooku",
   "keywords": ["odoo", "openerp", "python"],
   "buildpacks": [
     {
-      "url": "https://github.com/adaptivdesign/odooku-buildpack"
+      "url": "https://github.com/singularity-is-i/odooku-buildpack"
     }
   ],
   "addons": [
     "heroku-postgresql:hobby-basic",
-    "heroku-redis:hobby-dev"
+    "heroku-redis:hobby-dev",
+    "papertrail:choklad",
+    "memcachedcloud:30"
   ],
   "env": {
     "AWS_ACCESS_KEY_ID": {
@@ -23,6 +25,10 @@
     },
     "S3_BUCKET": {
       "description": "Amazon S3 bucket for attachment storage",
+      "value": ""
+    },
+    "ODOOKU_ADMIN_PASSWORD": {
+      "description": "Set Odoo Admin Password",
       "value": ""
     }
   },
