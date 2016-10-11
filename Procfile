@@ -1,2 +1,2 @@
-web: odooku --database-maxconn 8 --redis-maxconn 8 wsgi $PORT --workers 2 --threads 10
-worker: odooku --database-maxconn 2 --redis-maxconn 2 cron --workers 2
+web: odooku --database-maxconn 15 --redis-maxconn 15 wsgi $PORT --workers 10 --threads 15
+worker: odooku --database-maxconn 5 --redis-maxconn 5 cron --workers 5
